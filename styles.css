@@ -33,6 +33,12 @@ header {
   justify-content: center;
 }
 
+#section1 {
+  display: flex;
+  flex-direction: column;
+  background-color: blanchedalmond;
+}
+
 /* FOOTER */
 footer {
   display: flex;
