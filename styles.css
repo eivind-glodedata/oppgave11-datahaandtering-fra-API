@@ -1,3 +1,7 @@
+body {
+  background-color: orangered;
+}
+
 /* HEADER */
 header {
   display: flex;
@@ -31,6 +35,26 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.loadingSpinner {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  color: red;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #section1 {

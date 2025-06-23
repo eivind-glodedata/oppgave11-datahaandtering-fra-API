@@ -1,9 +1,4 @@
-console.log("Hallajen");
-
 async function fetchBS() {
-    //const fetchData = await fetch("https://foodish-api.com/");
-    //const fetchData = await fetch("https://www.fruityvice.com/");
-
     // using corporate bullshit generator API
     const fetchData = await fetch("https://corporatebs-generator.sameerkumar.website/");
     
@@ -16,33 +11,29 @@ async function fetchBS() {
     return data;
 };
 
-fetchBS();
-
 async function displayBS() {
-  //  const response = await fetchBS();
-   // console.log(response + "is the response");
-
-   // const corporateBs = response;
-   // console.log(corporateBs.phrase + "is this an array???");
-
-   // const factsList = document.getElementById("factsList");
-  //  const listItem = document.createElement("li");
-   // factsList.appendChild(listItem);
-  //  listItem.textContent = corporateBs.phrase;
- // Array.from(corporateBs).forEach(element => {
- //   forEach(myFunction())
- // });
- // function myFunction() {
-   // factsList.appendChild(listItem);
-  //  listItem.textContent = corporateBs.phrase; }
-
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 12; i++) {
+    showLoading();
     const response = await fetchBS();
-    const factsList = document.getElementById("factsList");
+    const bsList = document.getElementById("bsList");
     const listItem = document.createElement("li");
-    factsList.appendChild(listItem);
+    bsList.prepend(listItem);
     listItem.textContent = response.phrase;
+    hideLoading();
   };
 };
 
 displayBS();
+
+const bsButton = document.getElementById("bsButton");
+bsButton.addEventListener("click", displayBS);
+
+function showLoading() {
+  document.getElementById("loadingSpinner").style.display = "block";
+  document.getElementById("spinnerText").style.display = "block";
+}
+
+function hideLoading() {
+  document.getElementById("loadingSpinner").style.display = "none";
+  document.getElementById("spinnerText").style.display = "none";
+}
