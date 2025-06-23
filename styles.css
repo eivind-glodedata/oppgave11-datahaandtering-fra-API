@@ -1,5 +1,5 @@
 body {
-  background-color: orangered;
+  background-color: orange;
 }
 
 /* HEADER */
@@ -55,6 +55,10 @@ header {
   100% {
     transform: rotate(360deg);
   }
+}
+
+button:hover {
+  background-color: orange;
 }
 
 #section1 {
